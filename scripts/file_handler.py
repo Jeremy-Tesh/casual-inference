@@ -28,15 +28,15 @@ class FileHandler():
         except FileNotFoundError:
             self.logger.exception('File not found.')
 
-    # def get_data_url_from_dvc(self, file_path, version):
-    #     try:
-    #         data_url = dvc.api.get_url(
-    #             path=str(file_path), repo=str(Config.REPO), rev=version)
-    #         self.logger.info("Data url fetched from dvc.")
-    #         return data_url
+    def get_data_url_from_dvc(self, file_path, version):
+        try:
+            data_url = dvc.api.get_url(
+                path=str(file_path), repo=str(Config.REPO), rev=version)
+            self.logger.info("Data url fetched from dvc.")
+            return data_url
 
-        # except Exception:
-        #     self.logger.exception("Error while fetching data url from dvc.")
+        except Exception:
+            self.logger.exception("Error while fetching data url from dvc.")
 
     def save_model(self, model, model_name):
         try:
