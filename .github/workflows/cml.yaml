@@ -1,4 +1,4 @@
-name: AgriTech-USGSLIDAR
+name: Causal_inference
 
 on:
   push:
